@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero">
+<div class="container">
+
+<h2 class="section-title">Latest Courses</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<h4>Course Placeholder</h4>
+<p>Content coming soon</p>
+</div>
+
+<div class="card">
+<h4>Course Placeholder</h4>
+<p>Content coming soon</p>
+</div>
+
+<div class="card">
+<h4>Course Placeholder</h4>
+<p>Content coming soon</p>
+</div>
+
+<div class="card">
+<h4>Course Placeholder</h4>
+<p>Content coming soon</p>
+</div>
+
+</div>
+
+<h2 class="section-title">Latest Articles</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<h4>Article Placeholder</h4>
+<p>Content coming soon</p>
+</div>
+
+<div class="card">
+<h4>Article Placeholder</h4>
+<p>Content coming soon</p>
+</div>
+
+<div class="card">
+<h4>Article Placeholder</h4>
+<p>Content coming soon</p>
+</div>
+
+<div class="card">
+<h4>Article Placeholder</h4>
+<p>Content coming soon</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<style>
+
+.hero{
+padding:80px 0;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+color:white;
+margin:60px 0 40px 0;
+font-size:34px;
+font-weight:700;
+}
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+margin-bottom:60px;
+}
+
+.card{
+background:white;
+border-radius:12px;
+padding:30px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.card h4{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.card p{
+color:#6b7280;
+font-size:14px;
+}
+
+@media(max-width:1000px){
+.card-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:600px){
+.card-grid{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+
+{% endblock %}

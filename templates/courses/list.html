@@ -1,0 +1,95 @@
+{% extends "base/layout.html" %}
+
+{% block content %}
+
+<div style="text-align:center;margin-bottom:60px;">
+
+<h1 style="font-size:44px;font-weight:700;">
+All Courses
+</h1>
+
+</div>
+
+<div style="
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+">
+
+<a href="/courses/docker/" style="
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(12px);
+border-radius:14px;
+padding:40px 20px;
+text-align:center;
+text-decoration:none;
+color:white;
+font-weight:600;
+font-size:18px;
+transition:.25s;
+box-shadow:0 20px 40px rgba(0,0,0,.35);
+">
+
+Docker Mastery
+
+</a>
+
+<a href="/courses/kubernetes/" style="
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(12px);
+border-radius:14px;
+padding:40px 20px;
+text-align:center;
+text-decoration:none;
+color:white;
+font-weight:600;
+font-size:18px;
+transition:.25s;
+box-shadow:0 20px 40px rgba(0,0,0,.35);
+">
+
+Kubernetes Complete
+
+</a>
+
+<a href="/courses/terraform/" style="
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(12px);
+border-radius:14px;
+padding:40px 20px;
+text-align:center;
+text-decoration:none;
+color:white;
+font-weight:600;
+font-size:18px;
+transition:.25s;
+box-shadow:0 20px 40px rgba(0,0,0,.35);
+">
+
+Terraform Infrastructure
+
+</a>
+
+<a href="/courses/cicd/" style="
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(12px);
+border-radius:14px;
+padding:40px 20px;
+text-align:center;
+text-decoration:none;
+color:white;
+font-weight:600;
+font-size:18px;
+transition:.25s;
+box-shadow:0 20px 40px rgba(0,0,0,.35);
+">
+
+CI/CD DevOps Pipeline
+
+</a>
+
+</div>
+
+{% endblock %}

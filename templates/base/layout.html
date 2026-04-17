@@ -1,0 +1,332 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>DevOps Academy</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+height:100%;
+font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu;
+background:linear-gradient(180deg,#3b44a1,#2d3a86);
+color:white;
+}
+
+body{
+display:flex;
+flex-direction:column;
+}
+
+main{
+flex:1;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 40px;
+background:rgba(0,0,0,.15);
+position:relative;
+}
+
+.nav-left{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo{
+height:36px;
+border-radius:6px;
+}
+
+.brand{
+font-weight:700;
+font-size:20px;
+}
+
+.nav-right{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.nav-right a{
+color:white;
+text-decoration:none;
+opacity:.9;
+font-weight:500;
+}
+
+.nav-right a:hover{
+opacity:1;
+}
+
+.hamburger{
+display:none;
+flex-direction:column;
+justify-content:center;
+gap:6px;
+background:transparent;
+border:1px solid rgba(255,255,255,.3);
+padding:10px 12px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.hamburger span{
+display:block;
+width:22px;
+height:2px;
+background:white;
+}
+
+footer{
+background:#0b1b33;
+color:white;
+margin-top:80px;
+padding:70px 0 30px 0;
+}
+
+.footer-grid{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:40px;
+padding:0 20px;
+}
+
+.footer-bottom{
+max-width:1200px;
+margin:auto;
+margin-top:40px;
+border-top:1px solid rgba(255,255,255,.15);
+padding-top:20px;
+text-align:center;
+opacity:.7;
+}
+
+footer ul{
+list-style:none;
+padding:0;
+line-height:2;
+}
+
+footer a{
+color:white;
+text-decoration:none;
+opacity:.85;
+}
+
+@media (max-width:900px){
+
+.hamburger{
+display:flex;
+}
+
+.nav-right{
+position:absolute;
+top:70px;
+right:20px;
+background:#2d3a86;
+flex-direction:column;
+width:220px;
+padding:20px;
+display:none;
+gap:16px;
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+border-radius:8px;
+}
+
+.nav-right.show{
+display:flex;
+}
+
+.footer-grid{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media (max-width:600px){
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="nav-left">
+
+<img src="{% static 'img/CloudDevOpsLab.png' %}" class="logo">
+
+<span class="brand">DevOps Academy</span>
+
+</div>
+
+<button class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</button>
+
+<div class="nav-right" id="navMenu">
+
+<a href="/">Home</a>
+
+<a href="/courses/">Courses</a>
+
+<a href="/articles/">Tutorials</a>
+
+{% if user.is_authenticated %}
+
+<a href="/dashboard/">Dashboard</a>
+
+<a href="/accounts/logout/" style="color:#ff4b4b;">Logout</a>
+
+{% else %}
+
+<a href="/accounts/login/">User Login</a>
+
+<a href="/accounts/signup/">Register</a>
+
+{% endif %}
+
+<a href="/admin/" style="color:#ff4b4b;">Admin</a>
+
+</div>
+
+</header>
+
+<main>
+
+<div class="container">
+
+{% block content %}
+{% endblock %}
+
+</div>
+
+</main>
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<h3>DevOps Academy</h3>
+
+<p style="opacity:.8;line-height:1.6;">
+Professional DevOps learning platform covering CI/CD pipelines,
+containerization, cloud infrastructure and automation.
+</p>
+
+</div>
+
+<div>
+
+<h4>Platform</h4>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+
+<li><a href="/courses/">Courses</a></li>
+
+<li><a href="/articles/">Tutorials</a></li>
+
+<li><a href="/accounts/signup/">Register</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>Technologies</h4>
+
+<ul>
+
+<li>Docker</li>
+
+<li>Kubernetes</li>
+
+<li>Terraform</li>
+
+<li>AWS</li>
+
+<li>CI/CD</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>Community</h4>
+
+<ul>
+
+<li>GitHub</li>
+
+<li>LinkedIn</li>
+
+<li>Discord</li>
+
+<li>Support</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 DevOps Academy. All rights reserved.
+
+</div>
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("navMenu").classList.toggle("show");
+}
+
+</script>
+
+</body>
+
+</html>

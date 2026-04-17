@@ -1,0 +1,10 @@
+Django
+razorpay
+requests
+openai
+celery
+redis
+django-celery-beat
+python-dotenv
+newspaper3k
+Pillow

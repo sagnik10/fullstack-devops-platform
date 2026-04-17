@@ -1,0 +1,154 @@
+{% extends "base/layout.html" %}
+
+{% block content %}
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+section{
+scroll-margin-top:140px;
+margin-bottom:50px;
+}
+
+.page-wrapper{
+max-width:1300px;
+margin:auto;
+padding:80px 20px 120px;
+display:grid;
+grid-template-columns:260px 1fr;
+gap:40px;
+align-items:start;
+}
+
+.sidebar{
+background:white;
+color:#111827;
+border-radius:12px;
+padding:30px;
+height:fit-content;
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+position:sticky;
+top:120px;
+}
+
+.article{
+background:white;
+color:#111827;
+border-radius:16px;
+padding:60px;
+box-shadow:0 30px 60px rgba(0,0,0,.25);
+}
+
+@media (max-width:900px){
+
+.page-wrapper{
+grid-template-columns:1fr;
+}
+
+.sidebar{
+position:relative;
+top:0;
+margin-bottom:20px;
+}
+
+.article{
+padding:30px;
+}
+
+}
+
+</style>
+
+<div class="page-wrapper">
+
+<div class="sidebar">
+
+<h3 style="margin-bottom:20px;font-weight:700;">
+Topics
+</h3>
+
+<ul style="list-style:none;padding:0;line-height:2.2;">
+
+{% for topic in topics %}
+
+<li>
+<a href="#{{ topic|slugify }}" style="text-decoration:none;color:#2563eb;font-weight:500;">
+{{ topic }}
+</a>
+</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+<div class="article">
+
+<h1 style="font-size:40px;font-weight:700;margin-bottom:10px;">
+{{ article_title }}
+</h1>
+
+<p style="opacity:.7;margin-bottom:50px;">
+DevOps Academy • Technical Article
+</p>
+
+<section id="introduction">
+<h2>Introduction</h2>
+<p>
+DevOps is a modern software development methodology that integrates development
+and operations teams to deliver software faster and more reliably. By combining
+automation, collaboration and monitoring, DevOps improves software quality and
+reduces deployment risks.
+</p>
+</section>
+
+<section id="pods">
+<h2>Pods</h2>
+<p>
+A Pod is the smallest deployable unit in Kubernetes. It represents a single
+instance of a running process in your cluster and can contain one or more containers.
+Containers within a Pod share networking and storage resources.
+</p>
+</section>
+
+<section id="deployments">
+<h2>Deployments</h2>
+<p>
+Deployments manage the creation and scaling of Pods. They ensure that the desired
+number of replicas are running and allow rolling updates and rollbacks for applications.
+</p>
+</section>
+
+<section id="services">
+<h2>Services</h2>
+<p>
+Services provide stable networking and load balancing for Pods. They allow
+applications running in different Pods to communicate with each other reliably.
+</p>
+</section>
+
+<section id="configmaps">
+<h2>ConfigMaps</h2>
+<p>
+ConfigMaps store configuration data as key-value pairs and allow containers
+to consume configuration without hardcoding values into the container image.
+</p>
+</section>
+
+<section id="scaling">
+<h2>Scaling</h2>
+<p>
+Kubernetes supports automatic and manual scaling of applications. Horizontal
+Pod Autoscalers adjust the number of Pods based on CPU usage or other metrics.
+</p>
+</section>
+
+</div>
+
+</div>
+
+{% endblock %}

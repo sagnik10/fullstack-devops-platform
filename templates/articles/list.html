@@ -1,0 +1,95 @@
+{% extends "base/layout.html" %}
+
+{% block content %}
+
+<div style="max-width:1300px;margin:auto;padding-top:60px;display:grid;grid-template-columns:260px 1fr;gap:40px;">
+
+<div style="
+background:white;
+color:#111827;
+border-radius:12px;
+padding:30px;
+height:fit-content;
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+">
+
+<h3 style="margin-bottom:20px;font-weight:700;">
+Topics
+</h3>
+
+<ul style="list-style:none;padding:0;line-height:2;">
+{% for topic in topics %}
+<li>{{ topic }}</li>
+{% endfor %}
+</ul>
+
+</div>
+
+
+<div style="
+background:white;
+color:#111827;
+border-radius:16px;
+padding:60px;
+box-shadow:0 30px 60px rgba(0,0,0,.4);
+">
+
+<h1 style="font-size:40px;font-weight:700;margin-bottom:10px;">
+{{ article_title }}
+</h1>
+
+<p style="opacity:.7;margin-bottom:40px;">
+DevOps Academy • Technical Article
+</p>
+
+<h2>Introduction</h2>
+
+<p>
+DevOps is a modern software development methodology that integrates development
+and operations teams to deliver software faster and more reliably. By combining
+automation, collaboration and monitoring, DevOps improves software quality and
+reduces deployment risks.
+</p>
+
+<h2>Core Concepts</h2>
+
+<ul>
+<li>Continuous Integration</li>
+<li>Continuous Delivery</li>
+<li>Infrastructure as Code</li>
+<li>Automation Pipelines</li>
+<li>Monitoring and Observability</li>
+</ul>
+
+<h2>Architecture</h2>
+
+<p>
+A modern DevOps architecture typically includes version control systems, CI/CD
+pipelines, containerization platforms such as Docker, orchestration systems
+like Kubernetes, infrastructure automation tools such as Terraform and
+monitoring solutions like Prometheus and Grafana.
+</p>
+
+<h2>Best Practices</h2>
+
+<ul>
+<li>Automate build and deployment pipelines</li>
+<li>Use version control for infrastructure</li>
+<li>Implement automated testing</li>
+<li>Adopt containerization</li>
+<li>Monitor systems continuously</li>
+</ul>
+
+<h2>Real World Usage</h2>
+
+<p>
+Companies like Netflix, Amazon and Google deploy thousands of updates daily
+using DevOps practices. These companies rely on automation pipelines and
+cloud-native infrastructure to scale applications globally.
+</p>
+
+</div>
+
+</div>
+
+{% endblock %}

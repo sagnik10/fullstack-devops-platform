@@ -1,0 +1,150 @@
+﻿{% extends "base/layout.html" %}
+
+{% block content %}
+
+<style>
+
+body{
+margin:0;
+}
+
+main{
+padding-top:0;
+margin-top:0;
+}
+
+.login-page{
+min-height:calc(100vh - 70px);
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px 20px;
+}
+
+.login-container{
+width:100%;
+max-width:420px;
+background:white;
+padding:50px 45px;
+border-radius:16px;
+box-shadow:0 25px 60px rgba(0,0,0,.35);
+}
+
+.login-title{
+text-align:center;
+font-size:32px;
+font-weight:700;
+margin-bottom:35px;
+color:#0f172a;
+}
+
+.form-group{
+margin-bottom:22px;
+}
+
+.form-group label{
+display:block;
+font-weight:600;
+margin-bottom:6px;
+color:#374151;
+}
+
+.login-input{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #d1d5db;
+font-size:14px;
+margin-top:6px;
+}
+
+.login-input:focus{
+outline:none;
+border-color:#2563eb;
+box-shadow:0 0 0 3px rgba(37,99,235,.15);
+}
+
+.login-btn{
+width:100%;
+padding:12px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:8px;
+font-weight:600;
+cursor:pointer;
+transition:.25s;
+}
+
+.login-btn:hover{
+background:#1e4ed8;
+transform:translateY(-1px);
+box-shadow:0 8px 18px rgba(37,99,235,.35);
+}
+
+.login-footer{
+margin-top:20px;
+text-align:center;
+font-size:14px;
+color:#6b7280;
+}
+
+.login-footer a{
+color:#2563eb;
+font-weight:600;
+text-decoration:none;
+}
+
+.login-footer a:hover{
+text-decoration:underline;
+}
+
+@media (max-width:500px){
+
+.login-container{
+padding:35px 25px;
+}
+
+.login-title{
+font-size:26px;
+}
+
+}
+
+</style>
+
+<div class="login-page">
+
+<div class="login-container">
+
+<h1 class="login-title">User Login</h1>
+
+<form method="post">
+{% csrf_token %}
+
+<div class="form-group">
+<label>Username</label>
+<input type="text" name="username" class="login-input" placeholder="Enter username" required>
+</div>
+
+<div class="form-group">
+<label>Password</label>
+<input type="password" name="password" class="login-input" placeholder="Password" required>
+</div>
+
+<button type="submit" class="login-btn">
+Login
+</button>
+
+<div class="login-footer">
+Don't have an account?
+<a href="/accounts/register/">Register</a>
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+{% endblock %}

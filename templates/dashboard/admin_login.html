@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="flex justify-center items-center h-[80vh]">
+
+<div class="bg-white p-10 rounded-xl shadow w-96">
+
+<h2 class="text-2xl font-bold mb-6 text-center text-red-600">
+Admin Login
+</h2>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<input name="username" placeholder="Admin Username" class="w-full border p-3 mb-4 rounded">
+
+<input type="password" name="password" placeholder="Password" class="w-full border p-3 mb-4 rounded">
+
+<button class="w-full bg-red-600 text-white p-3 rounded">
+Login
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+{% endblock %}

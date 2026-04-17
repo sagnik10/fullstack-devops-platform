@@ -1,0 +1,109 @@
+{% extends "base/layout.html" %}
+
+{% block content %}
+
+<div style="max-width:1200px;margin:auto;padding-top:40px;padding-bottom:80px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px;">
+
+<div>
+
+<h1 style="font-size:48px;font-weight:700;margin-bottom:15px;">
+Dashboard
+</h1>
+
+<p style="font-size:18px;opacity:.85;margin-bottom:40px;">
+Manage your DevOps learning platform, access courses, tutorials and automation labs.
+</p>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+">
+
+<a href="/courses/" style="
+background:white;
+color:#111827;
+padding:30px;
+border-radius:14px;
+text-decoration:none;
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+display:block;
+">
+
+<h3>Courses</h3>
+
+<p style="opacity:.7;">
+Explore DevOps training
+</p>
+
+<span style="color:#2563eb;font-weight:600;">
+Open →
+</span>
+
+</a>
+
+
+<a href="/articles/" style="
+background:white;
+color:#111827;
+padding:30px;
+border-radius:14px;
+text-decoration:none;
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+display:block;
+">
+
+<h3>Articles</h3>
+
+<p style="opacity:.7;">
+Read DevOps tutorials
+</p>
+
+<span style="color:#2563eb;font-weight:600;">
+Read →
+</span>
+
+</a>
+
+
+<a href="/automation/articles/" style="
+background:white;
+color:#111827;
+padding:30px;
+border-radius:14px;
+text-decoration:none;
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+display:block;
+">
+
+<h3>Automation</h3>
+
+<p style="opacity:.7;">
+Infrastructure automation
+</p>
+
+<span style="color:#2563eb;font-weight:600;">
+Explore →
+</span>
+
+</a>
+
+</div>
+
+</div>
+
+
+<div style="text-align:center;">
+
+<img src="/static/img/CloudDevOpsLab.png" style="
+width:100%;
+max-width:500px;
+border-radius:16px;
+box-shadow:0 30px 70px rgba(0,0,0,.45);
+">
+
+</div>
+
+</div>
+
+{% endblock %}
